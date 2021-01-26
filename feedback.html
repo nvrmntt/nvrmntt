@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"/>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: url('./images/background.gif');
+        }
+
+        .mainHeader,
+        .btn-primary {
+            background: #0091EA;
+            color: white !important;
+        }
+        h4, h6, button {
+            font-family: poppins;
+        }
+h4 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+h6 {
+    font-size: 0.9rem;
+    color: #282828;
+}
+        .main {
+            background: white;
+            box-shadow: 0px 0px 12px #cecece;
+            -moz-box-shadow: 0px 0px 12px #cecece;
+            -webkit-box-shadow: 0px 0px 12px #cecece;
+            -o-box-shadow: 0px 0px 12px #cecece;
+        }
+
+        .main textarea {
+            background: #F5F9FB;
+        }
+
+        .main textarea,
+        .mainHeader p {
+            font-size: 0.9rem;
+        }
+
+        .tooltip .arrow:before {
+            border-bottom-color: white !important;
+            border-top-color: white !important;
+        }
+
+        .tooltip.bs-tooltip-bottom .tooltip-inner {
+            color: #282828 !important;
+            background-color: gainsboro !important;
+            border: none !important;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+        }
+
+        .tooltip.show {
+            opacity: 0.6 !important;
+        }
+
+        textarea:focus {
+            box-shadow: none !important;
+            background: #F5F9FB !important;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="rounded main">
+                <div class='pt-4 pr-5 pl-4 pb-3 rounded-top mainHeader'>
+                    <h4>Send us your feedback</h4>
+                    <p class='small'>Do you have any suggestions for us?</p>
+                </div>
+                <div class='pt-3 pb-3 pl-4 pr-4'>
+                    <h6>How was your experience?</h6>
+                    <div class='row' id="ratings">
+                        <div class="col" data-toggle="tooltip" data-placement="bottom">
+                            <img src='./images/1.png' />
+                        </div>
+                        <div class="col" data-toggle="tooltip" data-placement="bottom">
+                            <img src='./images/2.png' />
+                        </div>
+                        <div class="col" data-toggle="tooltip" data-placement="bottom">
+                            <img src='./images/3.png' />
+                        </div>
+                        <div class="col" data-toggle="tooltip" data-placement="bottom">
+                            <img src='./images/4.png' />
+                        </div>
+                        <div class="col" data-toggle="tooltip" data-placement="bottom">
+                            <img src='./images/5.png' />
+                        </div>
+                    </div>
+                </div>
+                <textarea rows="6" type="text" class="small text-dark rounded-0 border-0 pt-3 pb-3 pl-4 pr-4 form-control" placeholder="Describe your experience here.."></textarea>
+                <div class="text-center p-4">
+                    <button type="submit" class="btn btn-primary btn-sm p-2 btn-block rounded">Send Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const url = 'https://www.naviadoctors.com/visit_feedback/front_end_test';
+        const box = document.getElementById('ratings');
+        fetch(url) //ES6, won't work in IE
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                const rating = Object.values(myJson.ratings);
+                const myChilds = Array.from(box.children); //ES6
+                
+                // Alternatively we could use - const myChilds = Array.prototype.slice.call(box.children) for better browser support
+                myChilds.forEach(function (item, index) {
+                    const value = rating[index];
+                    item.setAttribute("title", value);
+                });
+                $('[data-toggle="tooltip"]').tooltip({ animation: true });
+                $('#ratings img').hover(function () {
+                    $(this).toggleClass('animated swing');
+                });
+            });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

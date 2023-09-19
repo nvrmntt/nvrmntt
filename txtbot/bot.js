@@ -79,12 +79,12 @@ const
 				fishtxt+= prgFun(0,0,1);
 				break;
 
-			//case 2:
+			case 2:
 				for(i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
 				fishtxt+=prgFun();
 				break;
 
-			///case 3:
+			case 3:
 				for(let i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
 				for(let i=0;i<col;i++){fishtxt+=prgFun(i,2);}
 				break;

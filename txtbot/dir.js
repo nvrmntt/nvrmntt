@@ -1,5 +1,5 @@
 let 
-iteraciya = 222,
+iteraciya = 100,
 slhtml = vshtml = prdhtml = zglhtml = ""
 const
 BARR = {
@@ -141,7 +141,7 @@ onCreate = () =>
 	})
 ///////////////////////////////////
 	//{ Stroka = []
-	document.querySelectorAll("#prd .zgl").forEach((e,i)=>
+	//document.querySelectorAll("#prd .zgl").forEach((e,i)=>
 	{
 		let yy=[]
 		e.querySelectorAll(".inp:not(.addLin2):not(.addIn)").forEach((ee)=>
@@ -175,7 +175,7 @@ onCreate = () =>
 
 	console.log("Slova", Slova)
 	console.log("Vstavka", Vstavka)
-	console.log("Stroka", Stroka)
+	//console.log("Stroka", Stroka)
 	console.log("Zagolovok", Zagolovok)
 
 	scrollTo(document.querySelector('#cont'))
@@ -208,13 +208,13 @@ for(let i=0; i<Vstavka.length; i=i+5)
 }
 vstavka.innerHTML = vshtml
 
-for(let i=0,txt; i<Stroka.length; i++)
+//for(let i=0,txt; i<Stroka.length; i++)
 {
 	prdhtml += "<div class=\"lin zgl\">"
 	for(let ii=0; ii<Stroka[i].length; ii++) 
 	{
 		txt =  Stroka[i][ii]
-		if (typeof txt == "object") txt = txt.join("|")
+		//if (typeof txt == "object") txt = txt.join("|")
 		prdhtml += "<span class=\"str inp\" contenteditable>" + txt + "</span>"
 	}
 	prdhtml += "<span class=\"addIn str inp\" contenteditable></span></div>"

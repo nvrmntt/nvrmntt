@@ -77,19 +77,19 @@ onCreate = () =>
 		Vstavka.push(e.textContent)
 	})
 ///////////////////////////////////
-	Stroka = []
-	document.querySelectorAll(".prd").forEach((e,i)=>
-	{
-		let yy=[]
-		e.querySelectorAll(".inp").forEach((ee)=>
-		{
-			let x = ee.textContent.split("|")
-			if (x.length>1) ee=x
-			else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
-			yy.push(ee)
-		})
-		Stroka.push(yy)
-	})
+	//Stroka = []
+	//document.querySelectorAll(".prd").forEach((e,i)=>
+	//{
+	//	let yy=[]
+	//	e.querySelectorAll(".inp").forEach((ee)=>
+	//	{
+	//		let x = ee.textContent.split("|")
+	//		if (x.length>1) ee=x
+	//		else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
+	//		yy.push(ee)
+	//	})
+	//	Stroka.push(yy)
+	//})
 	Zagolovok = []
 	document.querySelectorAll(".zgl").forEach((e,i)=>
 	{

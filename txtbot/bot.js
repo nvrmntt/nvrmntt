@@ -67,7 +67,7 @@ const
 			return ret;
 		};
 
-		//Stroka = Stroka.sort();
+		Stroka = Stroka.sort();
 		Zagolovok = Zagolovok.sort();
 		for (let i=0;i<=Slova.length;i=i+5){window["r"+ i]=rnd(i);}
 		fishtxt="", col=0;
@@ -79,15 +79,15 @@ const
 				fishtxt+= prgFun(0,0,1);
 				break;
 
-			//case 2:
-				//for(i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
-				//fishtxt+=prgFun();
-				//break;
+			case 2:
+				for(i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
+				fishtxt+=prgFun();
+				break;
 
-			//case 3:
-			//	for(let i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
-			//	for(let i=0;i<col;i++){fishtxt+=prgFun(i,2);}
-			//	break;
+			case 3:
+				for(let i=0;i<Stroka.length;i++){window["txt"+col++]=Stroka[i];}
+				for(let i=0;i<col;i++){fishtxt+=prgFun(i,2);}
+				break;
 		}
 		return fishtxt;
 	};

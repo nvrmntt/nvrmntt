@@ -1,5 +1,5 @@
 let 
-iteraciya = 100,
+iteraciya = 111,
 slhtml = vshtml = prdhtml = zglhtml = ""
 const
 BARR = {
@@ -9,11 +9,11 @@ BARR = {
 "«": null,
 "\`": "&#x301;",
 "...": "&#x2026;"},
-//cont = document.getElementById("cont"),
+cont = document.getElementById("cont"),
 bCreate = document.getElementById("bCreate"),
 slovar = document.getElementById("slovar"),
 vstavka = document.getElementById("vstavka"),
-//prd = document.getElementById("prd"),
+prd = document.getElementById("prd"),
 zgl = document.getElementById("zgl"),
 isN = n => !isNaN(parseFloat(n)) && isFinite(n),
 scrollTo = el => 
@@ -140,8 +140,8 @@ onCreate = () =>
 		Vstavka.push(e.textContent)
 	})
 ///////////////////////////////////
-	//{ Stroka = []
-	//document.querySelectorAll("#prd .zgl").forEach((e,i)=>
+	Stroka = []
+	document.querySelectorAll("#prd .zgl").forEach((e,i)=>
 	{
 		let yy=[]
 		e.querySelectorAll(".inp:not(.addLin2):not(.addIn)").forEach((ee)=>
@@ -151,7 +151,7 @@ onCreate = () =>
 			else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
 			yy.push(ee)
 		})
-		Stroka.push(yy)}
+		Stroka.push(yy)
 	})
 	Zagolovok = []
 	document.querySelectorAll("#zgl .zgl").forEach((e,i)=>
@@ -175,7 +175,7 @@ onCreate = () =>
 
 	console.log("Slova", Slova)
 	console.log("Vstavka", Vstavka)
-	//console.log("Stroka", Stroka)
+	console.log("Stroka", Stroka)
 	console.log("Zagolovok", Zagolovok)
 
 	scrollTo(document.querySelector('#cont'))
@@ -208,13 +208,13 @@ for(let i=0; i<Vstavka.length; i=i+5)
 }
 vstavka.innerHTML = vshtml
 
-//for(let i=0,txt; i<Stroka.length; i++)
+for(let i=0,txt; i<Stroka.length; i++)
 {
 	prdhtml += "<div class=\"lin zgl\">"
 	for(let ii=0; ii<Stroka[i].length; ii++) 
 	{
 		txt =  Stroka[i][ii]
-		//if (typeof txt == "object") txt = txt.join("|")
+		if (typeof txt == "object") txt = txt.join("|")
 		prdhtml += "<span class=\"str inp\" contenteditable>" + txt + "</span>"
 	}
 	prdhtml += "<span class=\"addIn str inp\" contenteditable></span></div>"

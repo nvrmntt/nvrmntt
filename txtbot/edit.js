@@ -9,7 +9,7 @@ BARR = {
 "«": null,
 "\`": "&#x301;",
 "...": "&#x2026;"},
-cont = document.getElementById("cont"),
+//cont = document.getElementById("cont"),
 bCreate = document.getElementById("bCreate"),
 slovar = document.getElementById("slovar"),
 vstavka = document.getElementById("vstavka"),
@@ -104,10 +104,10 @@ onCreate = () =>
 		Zagolovok.push(yy)
 	})
 ///////////////////////////////////
-	cont.innerHTML = ""
-	for (let i = 0; i < iteraciya; i++)
-	{
-		cont.innerHTML += "<div id=i"+ i +" class=blk contenteditable><pre class=h>"+ fish(1) +"</pre><pre class=h2>"+ fish(2) +"</pre><pre class=h3>"+ fish(2) +"</pre><pre class=t>"+ fish(3) +"</pre></div>"
+	//cont.innerHTML = ""
+	//for (let i = 0; i < iteraciya; i++)
+	//{
+	//	cont.innerHTML += "<div id=i"+ i +" class=blk contenteditable><pre class=h>"+ fish(1) +"</pre><pre class=h2>"+ fish(2) +"</pre><pre class=h3>"+ fish(2) +"</pre><pre class=t>"+ fish(3) +"</pre></div>"
 	}
 }
 

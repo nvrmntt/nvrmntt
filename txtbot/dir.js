@@ -9,11 +9,11 @@ BARR = {
 "«": null,
 "\`": "&#x301;",
 "...": "&#x2026;"},
-cont = document.getElementById("cont"),
+//cont = document.getElementById("cont"),
 bCreate = document.getElementById("bCreate"),
 slovar = document.getElementById("slovar"),
 vstavka = document.getElementById("vstavka"),
-prd = document.getElementById("prd"),
+//prd = document.getElementById("prd"),
 zgl = document.getElementById("zgl"),
 isN = n => !isNaN(parseFloat(n)) && isFinite(n),
 scrollTo = el => 
@@ -140,7 +140,7 @@ onCreate = () =>
 		Vstavka.push(e.textContent)
 	})
 ///////////////////////////////////
-	Stroka = []
+	//{ Stroka = []
 	document.querySelectorAll("#prd .zgl").forEach((e,i)=>
 	{
 		let yy=[]
@@ -151,7 +151,7 @@ onCreate = () =>
 			else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
 			yy.push(ee)
 		})
-		Stroka.push(yy)
+		Stroka.push(yy)}
 	})
 	Zagolovok = []
 	document.querySelectorAll("#zgl .zgl").forEach((e,i)=>

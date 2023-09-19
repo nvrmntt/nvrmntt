@@ -9,7 +9,7 @@ BARR = {
 "«": null,
 "\`": "&#x301;",
 "...": "&#x2026;"},
-//cont = document.getElementById("cont"),
+cont = document.getElementById("cont"),
 bCreate = document.getElementById("bCreate"),
 slovar = document.getElementById("slovar"),
 vstavka = document.getElementById("vstavka"),
@@ -77,19 +77,19 @@ onCreate = () =>
 		Vstavka.push(e.textContent)
 	})
 ///////////////////////////////////
-	//Stroka = []
-	//document.querySelectorAll(".prd").forEach((e,i)=>
-	//{
-	//	let yy=[]
-	//	e.querySelectorAll(".inp").forEach((ee)=>
-	//	{
-	//		let x = ee.textContent.split("|")
-	//		if (x.length>1) ee=x
-	//		else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
-	//		yy.push(ee)
-	//	})
-	//	Stroka.push(yy)
-	//})
+	Stroka = []
+	document.querySelectorAll(".prd").forEach((e,i)=>
+	{
+		let yy=[]
+		e.querySelectorAll(".inp").forEach((ee)=>
+		{
+			let x = ee.textContent.split("|")
+			if (x.length>1) ee=x
+			else ee = (isN(ee.textContent)) ? Number(ee.textContent) : ee.textContent
+			yy.push(ee)
+		})
+		Stroka.push(yy)
+	})
 	Zagolovok = []
 	document.querySelectorAll(".zgl").forEach((e,i)=>
 	{
@@ -104,10 +104,10 @@ onCreate = () =>
 		Zagolovok.push(yy)
 	})
 ///////////////////////////////////
-	//cont.innerHTML = ""
-	//for (let i = 0; i < iteraciya; i++)
-	//{
-	//	cont.innerHTML += "<div id=i"+ i +" class=blk contenteditable><pre class=h>"+ fish(1) +"</pre><pre class=h2>"+ fish(2) +"</pre><pre class=h3>"+ fish(2) +"</pre><pre class=t>"+ fish(3) +"</pre></div>"
+	cont.innerHTML = ""
+	for (let i = 0; i < iteraciya; i++)
+	{
+		cont.innerHTML += "<div id=i"+ i +" class=blk contenteditable><pre class=h>"+ fish(1) +"</pre><pre class=h2>"+ fish(2) +"</pre><pre class=h3>"+ fish(2) +"</pre><pre class=t>"+ fish(3) +"</pre></div>"
 	}
 }
 
